@@ -4,6 +4,7 @@ use App\Http\Controllers\AddKaryawanController;
 use App\Http\Controllers\HasilController;
 use App\Http\Controllers\NilaiKaryawanController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\KaryawanController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,7 +21,7 @@ Route::middleware(['role:admin,manager'])->group(function () {
     Route::put('/addkaryawan/{id}/update', [AddKaryawanController::class, 'update'])->name('addkaryawan.update');
     Route::delete('/addkaryawan/{id}/destroy', [AddKaryawanController::class, 'destroy'])->name('addkaryawan.destroy');
     Route::get('/addgrade/{id}', [NilaiKaryawanController::class, 'showAddGradeForm'])->name('employees.showAddGradeForm');
-    Route::get('/search', [NilaiKaryawanController::class, 'search'])->name('search');
+    Route::get('/search', [KaryawanController::class, 'search'])->name('search');
 
 });
 

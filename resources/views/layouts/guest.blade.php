@@ -21,7 +21,7 @@
         <div class="max-w-screen-xl m-5 sm:m-10 bg-white shadow rounded-lg flex justify-center flex-1">
             <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
                 <div class="flex justify-center items-center">
-                    <img src="img/logo.png" class="w-[120px]" alt="Logo Pondok Indah Golf">
+                    <img src="img/logo.png" class="w-[120px]" alt="Logo Pondok Indah Golf Apartment">
                 </div>
                 {{ $slot }}
             </div>

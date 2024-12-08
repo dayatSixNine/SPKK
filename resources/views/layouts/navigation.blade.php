@@ -7,7 +7,7 @@
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}" class="flex items-center">
                         <x-application-logo />
-                        <span class="text-xl font-bold ml-3">Pondok Indah Golf</span>
+                        <span class="text-xl font-bold ml-3">Pondok Indah Golf Apartment</span>
                     </a>
                 </div>
             </div>

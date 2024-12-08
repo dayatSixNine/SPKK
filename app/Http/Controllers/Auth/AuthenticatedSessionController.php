@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -58,15 +59,17 @@ class AuthenticatedSessionController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'dob' => 'required|string',
             'password' => 'required|string',
+            'dob' => 'required|date',
         ]);
+        // Convert the 'dob' to MySQL format (YYYY-MM-DD)
+        $dob = Carbon::parse($request->dob)->format('Y-m-d');
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'dob' => $request->dob,
+            'dob' => $dob,
         ]);
 
         return redirect()->route('login')->with('success', 'account-registered');

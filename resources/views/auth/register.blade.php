@@ -5,14 +5,14 @@
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
         <div class="mt-4">
             <x-input-label for="dob" :value="__('Tanggal Lahir')" />
-            <x-text-input id="dob" class="block mt-2 w-full" type="date" name="dob" :value="old('dob')" required autofocus autocomplete="dob" />
-            <x-input-error :messages="$errors->get('dob')" class="mt-2" />
+            <x-text-input id="dob" name="dob" type="date" class="mt-1 block w-full" />
+            <x-input-error class="mt-2" :messages="$errors->get('dob')" />
         </div>
 
         <!-- Email Address -->

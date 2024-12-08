@@ -8,6 +8,16 @@
 
         <h1 class="text-center font-extrabold text-xl md:text-2xl">List Karyawan</h1>
         <div class="container flex justify-end items-center pt-4">
+            <div class="flex justify-start items-center ml-3 mr-10">
+                <form action="{{ route('search') }}" method="GET">
+                <input type="hidden" name="view" value="{{ 'biokaryawan' }}">
+                    <input type="text" name="query" class="rounded" placeholder="Cari Karyawan">
+                    <button type="button" onclick="window.location.href='{{ route('search') }}'">
+                        ✖
+                    </button>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
             <div class="flex items-center">
                 <a href="{{ route('addkaryawan.create') }}" class="btn bg-green-600 text-white hover:bg-green-700 ">
                     <i class="bi bi-plus-circle"></i>
@@ -41,8 +51,7 @@
                             <td>{{ $employee->dob }}</td>
                             <td>{{ $employee->role }}</td>
                             <td>
-                                <a href="{{ route('addkaryawan.edit', $employee->id) }}"
-                                    class="btn btn-primary">Edit</a>
+                                <a href="{{ route('addkaryawan.edit', $employee->id) }}" class="btn btn-primary">Edit</a>
                                 <form action="{{ route('addkaryawan.destroy', $employee->id) }}" method="POST"
                                     style="display: inline-block;">
                                     @csrf
