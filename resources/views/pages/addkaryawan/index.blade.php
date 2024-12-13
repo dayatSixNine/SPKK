@@ -48,7 +48,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $employee->name }}</td>
-                            <td>{{ $employee->dob }}</td>
+                            <td>{{ $employee->dob->format('d-m-Y') }}</td>
                             <td>{{ $employee->role }}</td>
                             <td>
                                 <a href="{{ route('addkaryawan.edit', $employee->id) }}" class="btn btn-primary">Edit</a>

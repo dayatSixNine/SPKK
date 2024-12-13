@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Employee;
+use App\Models\User;
 
 class HasilController extends Controller
 {
     public function index()
     {
-        $employees = Employee::all();
+        $employees = User::all();
          $v1 = $v2 = $v3 = $v4 = $v5 = $v6 = 0;
         $totalAbsensi = $totalKebersihan = $totalLoyalitas = $totalPerilaku = $totalPeringatan = $totalKinerja = 0;
         $min = $max = 1;
@@ -25,8 +25,10 @@ class HasilController extends Controller
 
             $max = (int) max($employee->absensi, $employee->kebersihan, $employee->loyalitas, $employee->perilaku, $employee->peringatan, $employee->kinerja);
             $min = (int) min($employee->absensi, $employee->kebersihan, $employee->loyalitas, $employee->perilaku, $employee->peringatan, $employee->kinerja);    
+            $max = max(1, $max);
+            $min = max(1, $min);
 
-            $absensi_cb = $employee->absensi / $max;
+            $absensi_cb =  $employee->absensi / max(1, $max);
             $kebersihan_cb = $employee->kebersihan / $max;
             $loyalitas_cb = $employee->loyalitas / $max;
             $perilaku_cb = $employee->perilaku / $max;

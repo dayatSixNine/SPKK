@@ -26,7 +26,7 @@ $jabatan = $user->role;
 
     <ul>ID: <b>{{$id}}</b></ul>
     <ul>Nama Lengkap: <b>{{$nama}}</b></ul>
-    <ul>Tanggal Lahir: <b>{{$tgl}}</b></ul>
+    <ul>Tanggal Lahir: <b>{{$tgl->format('d-m-Y')}}</b></ul>
     <ul>Jabatan: <b>{{$jabatan}}</b></ul>
 
     <header>
