@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Carbon\Carbon;
 
 class AddKaryawanController extends Controller
 {
@@ -24,12 +25,21 @@ class AddKaryawanController extends Controller
             'name' => 'required|string|max:255',
             'dob' => 'required|date',
             'role' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
         ]);
+
+        // Convert the date string to a Carbon instance
+        $dobCarbon = Carbon::parse($request->dob);
+
+        // Remove hyphens and format the date
+        $pass = str_replace('-', '', $dobCarbon->format('dmY'));
 
         User::create([
             'name' => $request->name,
-            'dob' => $request->dob,
+            'dob' => $dobCarbon, // Save as Carbon instance if your database field accepts it
             'role' => $request->role,
+            'email' => $request->email,
+            'password' => $pass,
         ]);
 
         return redirect()->route('addkaryawan.index')->with('success', 'Data Karyawan Berhasil Ditambahkan');
