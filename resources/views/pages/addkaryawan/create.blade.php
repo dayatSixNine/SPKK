@@ -17,7 +17,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input type="text" name="full_name" id="full_name"
+                            <input type="text" name="name" id="full_name"
                                 class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 focus:outline-none focus:bg-white focus:border-indigo-500 ">
                         </div>
                     </div>
@@ -29,7 +29,19 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input type="date" name="date_of_birth" id="date_of_birth"
+                            <input type="date" name="dob" id="date_of_birth"
+                                class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 focus:outline-none focus:bg-white focus:border-indigo-500 ">
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-6">
+                        <div class="md:w-1/3">
+                            <label for="full_name"
+                                class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+                               E-Mail 
+                            </label>
+                        </div>
+                        <div class="md:w-2/3">
+                            <input type="text" name="name" id="full_name"
                                 class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 focus:outline-none focus:bg-white focus:border-indigo-500 ">
                         </div>
                     </div>
@@ -40,13 +52,13 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <select name="position"
+                            <select name="role"
                                 class="block w-full appearance-none bg-gray-100 border-2 border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                 id="position">1
                                 <option value="Admin">Admin</option>
                                 <option value="Manager">Manager</option>
                                 <option value="Karyawan">karyawan</option>
-                            </select>   
+                            </select>
                         </div>
                     </div>
 

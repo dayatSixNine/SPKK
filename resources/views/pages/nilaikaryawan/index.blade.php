@@ -12,9 +12,9 @@
             <div class="flex justify-start items-center ml-3 mr-10">
                 <form action="{{ route('search') }}" method="GET">
                     <input type="text" name="query" class="rounded" placeholder="Cari Karyawan">
-                    <button type="button" onclick="window.location.href='{{ route('search') }}'">
+                    <!-- <button type="button" onclick="window.location.href='{{ route('search') }}'">
                         ✖
-                    </button>
+                    </button> -->
                     <button type="submit">Search</button>
                 </form>
             </div>
