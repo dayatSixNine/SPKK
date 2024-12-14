@@ -18,7 +18,7 @@
                 <tbody>
                     @foreach ($employees as $employee)
                     <tr>
-                        <td>{{ $employee->full_name }}</td>
+                        <td>{{ $employee->name }}</td>
                         <td>{{ $employee->absensi }}</td>
                         <td>{{ $employee->kebersihan }}</td>
                         <td>{{ $employee->loyalitas }}</td>
@@ -48,7 +48,7 @@
                 <tbody>
                     @foreach ($employees as $employee)
                     <tr>
-                        <td>{{ $employee->full_name }}</td>
+                        <td>{{ $employee->name }}</td>
                         <td>{{ $employee->absensi_normalized }}</td>
                         <td>{{ $employee->kebersihan_normalized }}</td>
                         <td>{{ $employee->loyalitas_normalized }}</td>
