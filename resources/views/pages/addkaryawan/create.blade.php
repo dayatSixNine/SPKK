@@ -14,7 +14,7 @@
                             <label for="full_name"
                                 class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
                                 Nama Lengkap
-                            </label>
+                            </label>a
                         </div>
                         <div class="md:w-2/3">
                             <input type="text" name="name" id="name"

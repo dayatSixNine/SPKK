@@ -7,7 +7,7 @@
         <h1 class="text-center font-extrabold text-xl md:text-2xl pb-4">Edit Karyawan</h1>
         <form action="{{ route('addkaryawan.update', $employee->id) }}" method="POST">
             @csrf
-            @method('PUT')
+            @method('PATCH')
             <div class="container bg-white rounded border border-gray-100 pb-5">
                 <div class="w-full max-w-xl mx-auto pt-4">
                     <div class="md:flex md:items-center mb-6">
@@ -18,26 +18,32 @@
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input type="text" name="full_name" id="full_name" value="{{ $employee->name }}"
-                                class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 focus:outline-none focus:bg-white focus:border-indigo-500 ">
+                            <x-text-input id="dob" name="name" type="text" class="mt-1 block w-full" :value="old('name', $employee->name)" />
                         </div>
                     </div>
                     <div class="md:flex md:items-center mb-6">
                         <div class="md:w-1/3">
-                            <label for="dob"
-                                class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+                            <label for="dob" class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
                                 Tanggal Lahir
                             </label>
                         </div>
                         <div class="md:w-2/3">
-                            <input type="date" name="dob" id="dob"
-                                value="{{ $employee->dob }}"
-                                class="bg-gray-100 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 focus:outline-none focus:bg-white focus:border-indigo-500 ">
+                            <x-text-input id="dob" name="dob" type="date" class="mt-1 block w-full" :value="old('dob', $employee->dob)" />
                         </div>
                     </div>
                     <div class="md:flex md:items-center mb-6">
                         <div class="md:w-1/3">
-                            <label for="position" class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+                            <label for="email" class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
+                                E-Mail
+                            </label>
+                        </div>
+                        <div class="md:w-2/3">
+                        <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $employee->email)" />
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-6">
+                        <div class="md:w-1/3">
+                            <label for="role" class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
                                 Jabatan
                             </label>
                         </div>

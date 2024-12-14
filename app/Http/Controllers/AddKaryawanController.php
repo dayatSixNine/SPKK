@@ -57,13 +57,15 @@ class AddKaryawanController extends Controller
             'name' => 'required|string|max:255',
             'dob' => 'required|date',
             'role' => 'required|string|max:255',
+            'email' => 'required|string',
         ]);
 
         $employee = User::findOrFail($id);
         $employee->update([
-            'name' => $request->full_name,
-            'dob' => $request->date_of_birth,
-            'role' => $request->position,
+            'name' => $request->name,
+            'dob' => $request->dob,
+            'role' => $request->role,
+            'email' => $request->email,
         ]);
 
         return redirect()->route('addkaryawan.index')->with('success', 'Data Karyawan Berhasil Diperbaharui');

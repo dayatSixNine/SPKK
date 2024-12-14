@@ -71,7 +71,7 @@
                                 <td>
                                     <button>Hello</button>
                                     <div href="{{ route('employees.showAddGradeForm', $employee->id) }}" class="btn btn-primary"
-                                        class="btn btn-primary">Tambah Nilai</a>
+                                        class="btn btn-primary">Ubah Nilai</a>
                                         <!-- <a href="{{ route('employees.showAddGradeForm', $employee->id) }}" -->
                                         <!-- class="btn btn-primary">Tambah Nilai</a> -->
                                 </td>
@@ -91,7 +91,7 @@
                                 <td>{{ $result->peringatan }}</td>
                                 <td>{{ $result->kinerja }}</td>
                                 <td> <a href="{{ route('employees.showAddGradeForm', $result->id) }}"
-                                        class="btn btn-primary">Tambah Nilai</a>
+                                        class="btn btn-primary">Ubah Nilai</a>
                                 </td>
                             </tr>
                         @endforeach

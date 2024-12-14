@@ -124,7 +124,7 @@
                     @foreach ($top3Employees as $employee)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $employee->full_name }}</td>
+                        <td>{{ $employee->name }}</td>
                         <td>{{ $employee->total_normalized_score }}</td>
                     </tr>
                     @endforeach
