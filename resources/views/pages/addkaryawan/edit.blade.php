@@ -7,7 +7,7 @@
         <h1 class="text-center font-extrabold text-xl md:text-2xl pb-4">Edit Karyawan</h1>
         <form action="{{ route('addkaryawan.update', $employee->id) }}" method="POST">
             @csrf
-            @method('PATCH')
+            @method('PUT')
             <div class="container bg-white rounded border border-gray-100 pb-5">
                 <div class="w-full max-w-xl mx-auto pt-4">
                     <div class="md:flex md:items-center mb-6">
